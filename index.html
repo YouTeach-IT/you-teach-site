@@ -307,24 +307,10 @@
             <p class="uppercase text-gray-500 md:mb-6">Legal</p>
             <ul class="list-reset mb-6">
               <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
+                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500" onclick="terms_modal.showModal()">Terms</a>
               </li>
               <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
-              </li>
-            </ul>
-          </div>
-          <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">Social</p>
-            <ul class="list-reset mb-6">
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Facebook</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Linkedin</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Twitter</a>
+                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500" onclick="privacy_modal.showModal()">Privacy</a>
               </li>
             </ul>
           </div>
@@ -344,7 +330,6 @@
           </div>
         </div>
       </div>
-      <a href="https://www.freepik.com/free-photos-vectors/background" class="text-gray-500">Background vector created by freepik - www.freepik.com</a>
     </footer>
 
     <dialog id="contact_modal" class="modal rounded-3xl p-5">
@@ -374,8 +359,8 @@
 
     <dialog id="kpw_modal" class="modal rounded-3xl p-5">
       <div class="modal-box">
-        <h3 class="font-bold text-lg">KP Whitefield modal</h3>
-          <p class="py-4">Press ESC key or click the button below to close</p>
+        <h3 class="font-bold text-lg">Kip Mcgrath Whitefield</h3>
+          <p class="py-4"></p>
           <div class="modal-action">
           <form method="dialog">
             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -384,6 +369,35 @@
       </div>
     </dialog>
 
+    <!-- Terms and Conditions Modal -->
+    <dialog id="terms_modal" class="modal rounded-3xl p-5">
+      <div class="modal-box">
+        <h3 class="font-bold text-lg">KP Whitefield modal</h3>
+          <p class="py-4">
+            
+          </p>
+          <div class="modal-action">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Privacy Policy Modal -->
+    <dialog id="privacy_modal" class="modal rounded-3xl p-5">
+      <div class="modal-box">
+        <h3 class="font-bold text-lg">KP Whitefield modal</h3>
+          <p class="py-4">
+          
+          </p>
+          <div class="modal-action">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

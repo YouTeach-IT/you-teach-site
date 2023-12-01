@@ -43,16 +43,13 @@
               <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#offer">What We Offer</a>
             </li>
             <li class="mr-3">
-              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#test">Testimonials</a>
+              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4 hidden" href="#test">Testimonials</a>
             </li>
             <li class="mr-3">
               <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#pricing">Pricing</a>
             </li>
           </ul>
-          <button
-            id="navAction" onclick="contact_modal.showModal()"
-            class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-          >
+          <button id="navAction" onclick="contact_modal.showModal()" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
             Contact Us
           </button>
         </div>
@@ -70,7 +67,7 @@
           <p class="leading-normal text-2xl mb-8">
             IT Services aimed at private education centres
           </p>
-          <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" onclick="contact_modal.showModal()">
             Contact Us
           </button>
         </div>
@@ -99,7 +96,7 @@
         </g>
       </svg>
     </div>
-    <section class="bg-white border-b py-8" id="offer">
+    <section class="bg-white border-b py-10" id="offer">
       <div class="container max-w-5xl mx-auto m-8">
         <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
           What We Offer
@@ -110,11 +107,16 @@
         <div class="flex flex-wrap">
           <div class="w-5/6 sm:w-1/2 p-6">
             <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-              Lorem ipsum dolor sit amet
+              Everything you need to run lessons online
             </h3>
-            <p class="text-gray-600 mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-            </p>
+            <div class="text-gray-600 mb-8">
+              <li>Desktop computers</li>
+              <li>Laptop computers</li>
+              <li>Peripherals</li>
+              <li>Network printers</li>
+              <li>WiFI Routers</li>
+              <li>Network applicances</li>
+            </div>
           </div>
           <div class="w-full sm:w-1/2 p-6">
             <img src="img/pc.jpg"/>
@@ -127,17 +129,17 @@
           <div class="w-full sm:w-1/2 p-6 mt-6">
             <div class="align-middle">
               <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                Lorem ipsum dolor sit amet
+                Technical support during your workday
               </h3>
               <p class="text-gray-600 mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+                Lessons prevented by technical issues are costly, we aim to prevent that using remote assisstance tools and phone support.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="bg-white border-b py-8" id="test">
+    <section class="bg-white border-b py-14 hidden" id="test">
       <div class="container mx-auto flex flex-wrap pt-4 pb-12">
         <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
           Testimonials
@@ -185,7 +187,7 @@
         </div>
       </div>
     </section>
-    <section class="bg-gray-100 py-8" id="pricing">
+    <section class="bg-gray-100 py-14" id="pricing">
       <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
         <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
           Pricing
@@ -347,28 +349,21 @@
 
     <dialog id="contact_modal" class="modal rounded-3xl p-5">
       <div class="modal-box">
-        <h3 class="font-bold text-lg">Hello!</h3>
           <div class="modal-action">
             <form action="https://formsubmit.co/228267383ae313ad5d6b0450440c30eb" method="POST" enctype="multipart/form-data">
-              <p>
-                <label>
-                  Your name:
-                  <input type="text" name="name" class="input input-bordered w-full max-w-xs outline-slate-50 outline-1">
-                </label>
-              </p>
-              <p>
-                <label>
-                  Your email:
-                  <input type="email" name="email" class="input input-bordered w-full max-w-xs">
-                </label>
-              </p>
-              <p>
-                <label>
-                  Your message:
-                  <textarea name="message" class="textarea textarea-bordered"></textarea>
-                </label>
-              </p>
-            <button type="submit">Send</button>
+              <div>
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
+                <input type="text" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              </div>
+              <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
+                <input type="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+              <div>
+                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
+                <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+              </div>
+            <button type="submit" class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">Send</button>
           </form>
         </div>
         <form method="dialog">
@@ -377,7 +372,7 @@
       </div>
     </dialog>
 
-    <dialog id="kpw_modal" class="modal">
+    <dialog id="kpw_modal" class="modal rounded-3xl p-5">
       <div class="modal-box">
         <h3 class="font-bold text-lg">KP Whitefield modal</h3>
           <p class="py-4">Press ESC key or click the button below to close</p>
@@ -391,12 +386,8 @@
 
 
 
-    <!-- jQuery if you need it
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  -->
     <script>
-      /*Toggle dropdown list*/
-      /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
 
       var navMenuDiv = document.getElementById("nav-content");
       var navMenu = document.getElementById("nav-toggle");

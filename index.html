@@ -200,8 +200,8 @@
             <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
               <div class="p-8 text-3xl font-bold text-center border-b-4">Basic</div>
               <ul class="w-full text-center text-sm">
-                <li class="border-b py-4">Thing</li>
-                <li class="border-b py-4">Thing</li>
+                <li class="border-b py-4">9am-8pm Phone and Remote Support</li>
+                <li class="border-b py-4">Custom Dashboard</li>
                 <li class="border-b py-4">Thing</li>
               </ul>
             </div>
@@ -219,12 +219,12 @@
           </div>
           <div class="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
             <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-              <div class="w-full p-8 text-3xl font-bold text-center">Pro</div>
+              <div class="w-full p-8 text-3xl font-bold text-center">Premium</div>
               <div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
               <ul class="w-full text-center text-base font-bold">
-                <li class="border-b py-4">Thing</li>
-                <li class="border-b py-4">Thing</li>
-                <li class="border-b py-4">Thing</li>
+                <li class="border-b py-4">9am-8pm Phone and Remote Support</li>
+                <li class="border-b py-4">1 site visit per month</li>
+                <li class="border-b py-4">Custom Dashboard</li>
                 <li class="border-b py-4">Thing</li>
               </ul>
             </div>
@@ -335,7 +335,7 @@
     <dialog id="contact_modal" class="modal rounded-3xl p-5">
       <div class="modal-box">
           <div class="modal-action">
-            <form action="https://formsubmit.co/228267383ae313ad5d6b0450440c30eb" method="POST" enctype="multipart/form-data">
+            <form action="https://formcarry.com/s/JDehX3As3B" enctype="multipart/form-data" class="formcarryForm" >
               <div>
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
                 <input type="text" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -436,5 +436,46 @@
         return false;
       }
     </script>
+
+<script>
+$(function(){
+  $(".formcarryForm").submit(function(e){
+    e.preventDefault();
+    var href = $(this).attr("action");
+    
+    $.ajax({
+        type: "POST",
+        url: href,
+        data: new FormData(this),
+        dataType: "json",
+        processData: false,
+        contentType: false,
+        success: function(response){
+          if(response.status == "success"){
+              alert("We received your submission, thank you!");
+          }
+          else if(response.code === 422){
+            alert("Field validation failed");
+            $.each(response.errors, function(key) {
+              $('[name="' + key + '"]').addClass('formcarry-field-error');
+            });
+          }
+          else{
+            alert("An error occured: " + response.message);
+          }
+        },
+        error: function(jqXHR, textStatus){
+          const errorObject = jqXHR.responseJSON
+
+          alert("Request failed, " + errorObject.title + ": " + errorObject.message);
+        },
+        complete: function(){
+          // This will be fired after request is complete whether it's successful or not.
+          // Use this block to run some code after request is complete.
+        }
+    });
+  });
+});
+</script>
   </body>
 </html>
